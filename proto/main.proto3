@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package pos_node;
+option go_package = "github.com/synexio/pos_node";
+
+service Blockchain {
+    rpc Register (Empty) returns (RegisterResponse);
+    rpc Subscribe (SubscribeRequest) returns (SubscribeResponse);
+    rpc GetLastBlock (Empty) returns (BlockInfo);
+    rpc AddTransaction (Transaction) returns (Empty);
+    rpc BakeBlock (BakeRequest) returns (BakeResponse);
+    rpc ConfirmBake (ConfirmRequest) returns (Empty);
+}
+
+message Empty {}
+
+message RegisterResponse {
+    string uuid = 1;
+    int32 reputation = 2;
+}
+
+message SubscribeRequest {
+    string uuid = 1;
+}
+
+message SubscribeResponse {
+    string message = 1;
+}
+
+message BlockInfo {
+    string block_hash = 1;
+    string previous_block_hash = 2;
+    int32 block_number = 3;
+    string data = 4;
+}
+
+message Transaction {
+    string sender = 1;
+    string receiver = 2;
+    int32 amount = 3;
+    string data = 4;
+}
+
+message BakeRequest {
+    string uuid = 1;
+}
+
+message BakeResponse {
+    string uuid = 1;
+    string message = 2;
+}
+
+message ConfirmRequest {
+    string uuid = 1;
+}
