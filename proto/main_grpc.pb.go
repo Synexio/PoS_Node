@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.4.0
 // - protoc             v5.27.2
-// source: proto/main.proto3
+// source: proto/main.proto
 
 package pos_node
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion8
 
 const (
-	Blockchain_Register_FullMethodName       = "/pos_node.Blockchain/Register"
-	Blockchain_Subscribe_FullMethodName      = "/pos_node.Blockchain/Subscribe"
-	Blockchain_GetLastBlock_FullMethodName   = "/pos_node.Blockchain/GetLastBlock"
-	Blockchain_AddTransaction_FullMethodName = "/pos_node.Blockchain/AddTransaction"
-	Blockchain_BakeBlock_FullMethodName      = "/pos_node.Blockchain/BakeBlock"
-	Blockchain_ConfirmBake_FullMethodName    = "/pos_node.Blockchain/ConfirmBake"
+	Blockchain_Register_FullMethodName       = "/grpc_golang_template.Blockchain/Register"
+	Blockchain_Subscribe_FullMethodName      = "/grpc_golang_template.Blockchain/Subscribe"
+	Blockchain_GetLastBlock_FullMethodName   = "/grpc_golang_template.Blockchain/GetLastBlock"
+	Blockchain_AddTransaction_FullMethodName = "/grpc_golang_template.Blockchain/AddTransaction"
+	Blockchain_BakeBlock_FullMethodName      = "/grpc_golang_template.Blockchain/BakeBlock"
+	Blockchain_ConfirmBake_FullMethodName    = "/grpc_golang_template.Blockchain/ConfirmBake"
 )
 
 // BlockchainClient is the client API for Blockchain service.
@@ -267,7 +267,7 @@ func _Blockchain_ConfirmBake_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Blockchain_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pos_node.Blockchain",
+	ServiceName: "grpc_golang_template.Blockchain",
 	HandlerType: (*BlockchainServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -296,5 +296,5 @@ var Blockchain_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/main.proto3",
+	Metadata: "proto/main.proto",
 }

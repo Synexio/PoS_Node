@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pos_node;
+package grpc_golang_template;
 option go_package = "github.com/synexio/pos_node";
 
 service Blockchain {
