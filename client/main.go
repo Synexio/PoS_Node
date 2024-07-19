@@ -84,7 +84,7 @@ func main() {
 		log.Printf("Last Block! Hash: %s, Previous Hash: %s, Block Number: %d, Data: %s", res.BlockHash, res.PreviousBlockHash, res.BlockNumber, res.Data)
 
 	case *cheat:
-		// Crée 10 comptes et les 9 derniers donnent tous leur fond au premier
+		// Create 10 accounts and the last 9 ones give their funds to the 1st one
 		res, err := client.Register(ctx, &pb.Empty{})
 		if err != nil {
 			log.Fatalf("Could not register: %v", err)
